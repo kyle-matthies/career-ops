@@ -317,13 +317,10 @@ if (DRY_RUN) console.log('(dry-run — no changes written)');
 // Optional verify
 if (VERIFY && !DRY_RUN) {
   console.log('\n--- Running verification ---');
+  const { execFileSync } = await import('child_process');
   try {
-    const verifyModule = await import(join(CAREER_OPS, 'verify-pipeline.mjs'));
-    if (typeof verifyModule.default === 'function') {
-      await verifyModule.default();
-    }
+    execFileSync(process.execPath, [join(CAREER_OPS, 'verify-pipeline.mjs')], { stdio: 'inherit' });
   } catch (e) {
-    console.error('Verification failed:', e.message);
     process.exit(1);
   }
 }
