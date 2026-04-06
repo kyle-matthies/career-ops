@@ -230,14 +230,14 @@ process_offer() {
   # Mark as in-progress
   update_state "$id" "$url" "processing" "$started_at" "-" "$report_num" "-" "-" "$retries"
 
-  # Build the prompt with placeholders replaced
+  # Build the prompt with placeholders replaced (inputs are quoted to prevent injection)
   local prompt
   prompt="Procesa esta oferta de empleo. Ejecuta el pipeline completo: evaluación A-F + report .md + PDF + tracker line."
-  prompt="$prompt URL: $url"
-  prompt="$prompt JD file: $jd_file"
-  prompt="$prompt Report number: $report_num"
-  prompt="$prompt Date: $date"
-  prompt="$prompt Batch ID: $id"
+  prompt="${prompt} URL: ${url%$'\n'}"
+  prompt="${prompt} JD file: ${jd_file}"
+  prompt="${prompt} Report number: ${report_num}"
+  prompt="${prompt} Date: ${date}"
+  prompt="${prompt} Batch ID: ${id}"
 
   local log_file="$LOGS_DIR/${report_num}-${id}.log"
 

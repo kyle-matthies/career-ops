@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"net/url"
 	"os"
 	"os/exec"
 	"runtime"
@@ -81,16 +82,20 @@ func (m appModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		return m, nil
 
 	case screens.PipelineOpenURLMsg:
-		url := msg.URL
+		rawURL := msg.URL
 		return m, func() tea.Msg {
+			parsed, err := url.Parse(rawURL)
+			if err != nil || (parsed.Scheme != "http" && parsed.Scheme != "https") {
+				return nil
+			}
 			var cmd *exec.Cmd
 			switch runtime.GOOS {
 			case "darwin":
-				cmd = exec.Command("open", url)
+				cmd = exec.Command("open", rawURL)
 			case "linux":
-				cmd = exec.Command("xdg-open", url)
+				cmd = exec.Command("xdg-open", rawURL)
 			default:
-				cmd = exec.Command("open", url)
+				cmd = exec.Command("open", rawURL)
 			}
 			_ = cmd.Start()
 			return nil
