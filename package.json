@@ -11,11 +11,11 @@
     "sync-check": "node cv-sync-check.mjs"
   },
   "keywords": ["ai", "job-search", "claude-code", "career", "automation"],
-  "author": "Santiago Fernández de Valderrama <hi@santifer.io> (https://santifer.io)",
-  "homepage": "https://santifer.io",
+  "author": "Kyle Matthies <kyle.matthies@gmail.com>",
+  "homepage": "https://github.com/kyle-matthies/career-ops",
   "repository": {
     "type": "git",
-    "url": "https://github.com/santifer/career-ops"
+    "url": "https://github.com/kyle-matthies/career-ops"
   },
   "license": "MIT",
   "engines": {

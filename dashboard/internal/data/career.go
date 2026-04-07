@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/santifer/career-ops/dashboard/internal/model"
+	"github.com/kyle-matthies/career-ops/dashboard/internal/model"
 )
 
 var (
