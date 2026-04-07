@@ -23,6 +23,9 @@ AI-powered job search automation built on Claude Code: pipeline tracking, offer 
 | `article-digest.md` | Compact proof points from portfolio (optional) |
 | `interview-prep/story-bank.md` | Accumulated STAR+R stories across evaluations |
 | `reports/` | Evaluation reports (format: `{###}-{company-slug}-{YYYY-MM-DD}.md`) |
+| `scan-scheduled.mjs` | Lightweight scanner for GitHub Actions |
+| `create-scan-issue.mjs` | Create GitHub Issues from scan results |
+| `.github/workflows/scheduled-scan.yml` | Automated portal scan schedule |
 
 ### First Run — Onboarding (IMPORTANT)
 

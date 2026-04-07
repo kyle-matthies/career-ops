@@ -1,0 +1,50 @@
+name: Scheduled Portal Scan
+
+on:
+  schedule:
+    - cron: '0 9 * * 1,3,5'  # Mon/Wed/Fri at 9 AM UTC
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install --ignore-scripts
+
+      - name: Run scheduled scan
+        run: node scan-scheduled.mjs --output=json > scan-results.json
+
+      - name: Show scan results
+        run: cat scan-results.json
+
+      - name: Commit updated data files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --force data/scan-history.tsv data/pipeline.md 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update scan history and pipeline [skip ci]"
+            git push
+          fi
+
+      - name: Create GitHub Issue for new offers
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node create-scan-issue.mjs scan-results.json
