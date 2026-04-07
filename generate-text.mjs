@@ -164,7 +164,7 @@ function renderSection(section) {
 
   const isExperience = /experience|experiencia/i.test(titleUpper);
   const isSummary = /summary|resumen/i.test(titleUpper);
-  const isCompetencies = /competenc/i.test(titleUpper);
+  const isCompetencies = /core competenc|competencias? core/i.test(titleUpper);
   const isProjects = /project|proyecto/i.test(titleUpper);
   const isEducation = /education|formaci/i.test(titleUpper);
   const isCertifications = /certific/i.test(titleUpper);
