@@ -93,6 +93,7 @@ Career-ops is a single slash command with multiple modes:
 /career-ops deep           → Deep company research
 /career-ops training       → Evaluate a course/cert
 /career-ops project        → Evaluate a portfolio project
+/career-ops analytics      → Pipeline analytics and insights
 ```
 
 Or just paste a job URL or description directly -- career-ops auto-detects it and runs the full pipeline.
@@ -275,6 +276,7 @@ Career-ops es un unico slash command con multiples modos:
 /career-ops pipeline       → Procesar URLs pendientes
 /career-ops contacto       → Mensaje LinkedIn outreach
 /career-ops deep           → Research profundo de empresa
+/career-ops analytics      → Analíticas del pipeline e insights
 ```
 
 O simplemente pega una URL o descripcion de oferta -- career-ops la detecta y ejecuta el pipeline completo.

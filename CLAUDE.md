@@ -22,6 +22,7 @@ AI-powered job search automation built on Claude Code: pipeline tracking, offer 
 | `generate-pdf.mjs` | Puppeteer: HTML to PDF |
 | `article-digest.md` | Compact proof points from portfolio (optional) |
 | `interview-prep/story-bank.md` | Accumulated STAR+R stories across evaluations |
+| `analytics.mjs` | Parse tracker data for analytics |
 | `reports/` | Evaluation reports (format: `{###}-{company-slug}-{YYYY-MM-DD}.md`) |
 
 ### First Run — Onboarding (IMPORTANT)
@@ -117,6 +118,7 @@ This system is designed to be customized by YOU (Claude). When the user asks you
 | Searches for new offers | `scan` |
 | Processes pending URLs | `pipeline` |
 | Batch processes offers | `batch` |
+| Asks for pipeline analytics/stats | `analytics` |
 
 ### CV Source of Truth
 
