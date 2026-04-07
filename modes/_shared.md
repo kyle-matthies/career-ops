@@ -65,7 +65,7 @@ The skill applies with EQUAL rigor to ALL target roles. None is primary or secon
      - "Built and sold my SaaS after 5 years. Now focused on applied AI at scale."
      - "Led engineering at a Series B startup through 10x growth. Now seeking my next challenge."
      - "Transitioned from consulting to building product. Looking for high-ownership roles."
-     Read from config/profile.yml → narrative.exit_story -->
+     Read from config/profile.yml -> narrative.exit_story -->
 
 Use the candidate's exit story from `config/profile.yml` to frame ALL content:
 - **In PDF Summaries:** Bridge from past to future -- "Now applying the same [skill] to [JD domain]."
@@ -91,7 +91,7 @@ Convert "builder" into a professional signal, not a "hobby maker". Real proof po
        url: "https://yoursite.dev/demo"
        password: "demo-2026"
        when_to_share: "LLMOps, AI Platform, observability roles"
-     Read from config/profile.yml → narrative.proof_points and narrative.dashboard -->
+     Read from config/profile.yml -> narrative.proof_points and narrative.dashboard -->
 
 If the candidate has a live demo/dashboard (check profile.yml), offer access in applications for relevant roles.
 
@@ -120,7 +120,7 @@ If the candidate has a live demo/dashboard (check profile.yml), offer access in 
 
 ### Location Policy
 
-<!-- [CUSTOMIZE] Adapt to your situation. Read from config/profile.yml → location -->
+<!-- [CUSTOMIZE] Adapt to your situation. Read from config/profile.yml -> location -->
 
 **In forms:**
 - Binary "can you be on-site?" questions: follow your actual availability from profile.yml
