@@ -4,7 +4,7 @@ Reads and displays `data/applications.md`.
 
 **Tracker format:**
 ```markdown
-| # | Date | Company | Role | Score | Status | PDF | Report |
+| # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 ```
 
 Possible statuses: `Evaluated` → `Applied` → `Responded` → `Interview` → `Offer` / `Rejected` / `Discarded` / `SKIP`
