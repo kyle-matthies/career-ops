@@ -292,17 +292,6 @@ async function main() {
       );
     }
 
-    // Also log filtered and dup offers to scan history
-    for (const offer of filteredOffers) {
-      appendFileSync(SCAN_HISTORY_PATH,
-        `${offer.url}\t${today}\tGreenhouse API\t${offer.title}\t${offer.company}\tskipped_title\n`
-      );
-    }
-    for (const offer of duplicateOffers) {
-      appendFileSync(SCAN_HISTORY_PATH,
-        `${offer.url}\t${today}\tGreenhouse API\t${offer.title}\t${offer.company}\tskipped_dup\n`
-      );
-    }
 
     // Append to pipeline.md
     let pipelineContent = '';
