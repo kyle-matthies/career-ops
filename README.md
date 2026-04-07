@@ -146,6 +146,17 @@ go build -o career-dashboard .
 
 Features: 6 filter tabs, 4 sort modes, grouped/flat view, lazy-loaded previews, inline status changes.
 
+## Automated Scanning
+
+Career-ops can scan job portals automatically via GitHub Actions. The workflow runs on Mon/Wed/Fri and checks Greenhouse API endpoints for new listings matching your target roles.
+
+To enable:
+1. Ensure `portals.yml` exists with your configured companies
+2. The workflow runs automatically on schedule, or trigger manually from the Actions tab
+3. New offers appear as GitHub Issues and are added to `data/pipeline.md`
+
+To customize the schedule, edit `.github/workflows/scheduled-scan.yml`.
+
 ## Project Structure
 
 ```
@@ -284,6 +295,17 @@ O simplemente pega una URL o descripcion de oferta -- career-ops la detecta y ej
 - [SETUP.md](docs/SETUP.md) -- Guia de instalacion
 - [CUSTOMIZATION.md](docs/CUSTOMIZATION.md) -- Como personalizar
 - [ARCHITECTURE.md](docs/ARCHITECTURE.md) -- Como funciona el sistema
+
+## Automated Scanning / Escaneo Automatizado
+
+Career-ops puede escanear portales automaticamente via GitHub Actions. El workflow se ejecuta Lun/Mie/Vie y revisa endpoints de la API de Greenhouse buscando nuevas ofertas que coincidan con tus roles objetivo.
+
+Para activarlo:
+1. Asegurate de tener `portals.yml` con tus empresas configuradas
+2. El workflow se ejecuta automaticamente segun el schedule, o activalo manualmente desde la pestana Actions
+3. Las nuevas ofertas aparecen como GitHub Issues y se añaden a `data/pipeline.md`
+
+Para personalizar el schedule, edita `.github/workflows/scheduled-scan.yml`.
 
 ## Contact
 
