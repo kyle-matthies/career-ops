@@ -90,6 +90,29 @@ Usar el template en `cv-template.html`. Reemplazar los placeholders `{{...}}` co
 | `{{SECTION_SKILLS}}` | Skills / Competencias |
 | `{{SKILLS}}` | HTML de skills |
 
+## Multi-Format Export
+
+After generating the PDF, also generate:
+
+### DOCX (ATS-optimized)
+```bash
+node generate-docx.mjs /tmp/cv-candidate-{company}.html output/cv-candidate-{company}-{YYYY-MM-DD}.docx
+```
+The DOCX version uses clean Word formatting (Heading styles, no tables) for maximum ATS parseability. Use this when applying through Workday, Taleo, iCIMS, or any system that asks for a Word document.
+
+### Plain Text
+```bash
+node generate-text.mjs /tmp/cv-candidate-{company}.html output/cv-candidate-{company}-{YYYY-MM-DD}.txt
+```
+The text version is for pasting into web form text areas. Stripped of all formatting.
+
+### When to use each format:
+| Format | When to use |
+|--------|-------------|
+| **PDF** | Default. Most applications, email attachments, human readers |
+| **DOCX** | When the form specifically asks for Word format, or Workday/Taleo systems |
+| **TXT** | When pasting into a text area or "Additional information" field |
+
 ## Post-generación
 
 Actualizar tracker si la oferta ya está registrada: cambiar PDF de ❌ a ✅.

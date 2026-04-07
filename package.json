@@ -10,7 +10,13 @@
     "pdf": "node generate-pdf.mjs",
     "sync-check": "node cv-sync-check.mjs"
   },
-  "keywords": ["ai", "job-search", "claude-code", "career", "automation"],
+  "keywords": [
+    "ai",
+    "job-search",
+    "claude-code",
+    "career",
+    "automation"
+  ],
   "author": "Kyle Matthies <kyle.matthies@gmail.com>",
   "homepage": "https://github.com/kyle-matthies/career-ops",
   "repository": {
@@ -22,6 +28,7 @@
     "node": ">=18"
   },
   "dependencies": {
+    "docx": "^9.6.1",
     "playwright": "^1.58.1"
   }
 }
