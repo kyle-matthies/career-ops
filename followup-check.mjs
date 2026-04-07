@@ -157,7 +157,7 @@ for (const app of applications) {
   if (!normalizedStatus) continue; // Unknown status, skip
 
   const threshold = THRESHOLDS[normalizedStatus];
-  if (!threshold) continue; // No threshold for this status
+  if (threshold == null) continue; // No threshold for this status
 
   // Determine last activity date
   const logDate = followupLog.get(app.num);
