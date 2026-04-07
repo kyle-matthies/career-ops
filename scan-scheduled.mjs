@@ -174,10 +174,12 @@ async function main() {
   } else {
     const errorResult = {
       date: today,
+      dryRun,
       error: 'No portals configuration found (portals.yml or templates/portals.example.yml)',
       newOffers: [],
-      filteredOffers: [],
-      duplicateOffers: [],
+      filteredOffers: 0,
+      duplicateOffers: 0,
+      totalJobsFetched: 0,
       errors: [],
       companiesScanned: 0,
     };
@@ -200,9 +202,11 @@ async function main() {
   if (apiCompanies.length === 0) {
     const emptyResult = {
       date: today,
+      dryRun,
       newOffers: [],
-      filteredOffers: [],
-      duplicateOffers: [],
+      filteredOffers: 0,
+      duplicateOffers: 0,
+      totalJobsFetched: 0,
       errors: [],
       companiesScanned: 0,
       message: 'No Greenhouse API endpoints found in configuration',
