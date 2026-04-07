@@ -266,8 +266,9 @@ function buildAnalytics(entries) {
   const offer = (byStatus['Offer'] || 0);
 
   // For funnel calculations, count "downstream" statuses too
-  // Someone in Interview was also Applied at some point
-  const totalAppliedOrBeyond = applied + responded + interview + offer;
+  // Someone in Interview, Offer, or Rejected was also Applied at some point
+  const rejected = (byStatus['Rejected'] || 0);
+  const totalAppliedOrBeyond = applied + responded + interview + offer + rejected;
   const totalInterviewOrBeyond = interview + offer;
 
   const funnel = {
