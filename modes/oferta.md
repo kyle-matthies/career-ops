@@ -107,6 +107,7 @@ Save the full evaluation to `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 **Date:** {YYYY-MM-DD}
 **Archetype:** {detected}
 **Score:** {X/5}
+**URL:** {offer URL}
 **PDF:** {path or pending}
 
 ---
