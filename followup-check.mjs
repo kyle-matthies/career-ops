@@ -32,6 +32,10 @@ const args = process.argv.slice(2);
 const JSON_OUTPUT = args.includes('--json');
 const daysFlag = args.find(a => a.startsWith('--days='));
 const daysOverride = daysFlag ? parseInt(daysFlag.split('=')[1], 10) : null;
+if (daysOverride !== null && isNaN(daysOverride)) {
+  console.error('Error: --days= requires a numeric value');
+  process.exit(1);
+}
 
 // --- Thresholds (days since last activity) ---
 const THRESHOLDS = {
