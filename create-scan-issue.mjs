@@ -119,7 +119,8 @@ function getNextScanDate() {
 async function createIssue(title, body, labels) {
   const url = `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues`;
 
-  const response = await fetch(url, {
+  // First try with labels
+  let response = await fetch(url, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${GITHUB_TOKEN}`,
@@ -129,6 +130,21 @@ async function createIssue(title, body, labels) {
     },
     body: JSON.stringify({ title, body, labels }),
   });
+
+  // If labels don't exist (422), retry without labels
+  if (response.status === 422) {
+    console.log('Warning: labels may not exist in repo, retrying without labels...');
+    response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${GITHUB_TOKEN}`,
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title, body }),
+    });
+  }
 
   if (!response.ok) {
     const errorBody = await response.text();
