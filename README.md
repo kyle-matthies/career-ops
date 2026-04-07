@@ -43,6 +43,7 @@ Originally built to evaluate 740+ job offers, generate 100+ tailored CVs, and la
 | **Batch Processing** | Parallel evaluation with `claude -p` workers |
 | **Dashboard TUI** | Terminal UI to browse, filter, and sort your pipeline |
 | **Pipeline Integrity** | Automated merge, dedup, status normalization, health checks |
+| **Follow-up Tracking** | Stale application detection, follow-up reminders, activity logging |
 
 ## Quick Start
 
@@ -93,6 +94,7 @@ Career-ops is a single slash command with multiple modes:
 /career-ops deep           → Deep company research
 /career-ops training       → Evaluate a course/cert
 /career-ops project        → Evaluate a portfolio project
+/career-ops followup       → Check for stale applications and generate follow-ups
 ```
 
 Or just paste a job URL or description directly -- career-ops auto-detects it and runs the full pipeline.
@@ -275,6 +277,7 @@ Career-ops es un unico slash command con multiples modos:
 /career-ops pipeline       → Procesar URLs pendientes
 /career-ops contacto       → Mensaje LinkedIn outreach
 /career-ops deep           → Research profundo de empresa
+/career-ops followup       → Revisar aplicaciones inactivas y generar seguimientos
 ```
 
 O simplemente pega una URL o descripcion de oferta -- career-ops la detecta y ejecuta el pipeline completo.
