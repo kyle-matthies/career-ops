@@ -20,6 +20,8 @@ AI-powered job search automation built on Claude Code: pipeline tracking, offer 
 | `portals.yml` | Query and company config |
 | `templates/cv-template.html` | HTML template for CVs |
 | `generate-pdf.mjs` | Puppeteer: HTML to PDF |
+| `generate-docx.mjs` | HTML → DOCX conversion (ATS-optimized) |
+| `generate-text.mjs` | HTML → plain text conversion |
 | `article-digest.md` | Compact proof points from portfolio (optional) |
 | `interview-prep/story-bank.md` | Accumulated STAR+R stories across evaluations |
 | `reports/` | Evaluation reports (format: `{###}-{company-slug}-{YYYY-MM-DD}.md`) |
@@ -152,7 +154,8 @@ This system is designed to be customized by YOU (Claude). When the user asks you
 
 - Node.js (mjs modules), Playwright (PDF + scraping), YAML (config), HTML/CSS (template), Markdown (data)
 - Scripts in `.mjs`, configuration in YAML
-- Output in `output/` (gitignored), Reports in `reports/`
+- Output in `output/` (gitignored): PDFs (.pdf), Word docs (.docx), text (.txt)
+- Reports in `reports/`
 - JDs in `jds/` (referenced as `local:jds/{file}` in pipeline.md)
 - Batch in `batch/` (gitignored except scripts and prompt)
 - Report numbering: sequential 3-digit zero-padded, max existing + 1
