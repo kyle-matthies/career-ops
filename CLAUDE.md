@@ -23,6 +23,8 @@ AI-powered job search automation built on Claude Code: pipeline tracking, offer 
 | `article-digest.md` | Compact proof points from portfolio (optional) |
 | `interview-prep/story-bank.md` | Accumulated STAR+R stories across evaluations |
 | `reports/` | Evaluation reports (format: `{###}-{company-slug}-{YYYY-MM-DD}.md`) |
+| `data/followup-log.tsv` | Follow-up activity log |
+| `followup-check.mjs` | Scan for stale applications |
 
 ### First Run — Onboarding (IMPORTANT)
 
@@ -117,6 +119,7 @@ This system is designed to be customized by YOU (Claude). When the user asks you
 | Searches for new offers | `scan` |
 | Processes pending URLs | `pipeline` |
 | Batch processes offers | `batch` |
+| Asks about follow-ups or stale apps | `followup` |
 
 ### CV Source of Truth
 
@@ -209,3 +212,8 @@ Write one TSV file per evaluation to `batch/tracker-additions/{num}-{company-slu
 - No markdown bold (`**`) in status field
 - No dates in status field (use the date column)
 - No extra text (use the notes column)
+
+### Global Rules
+
+**ALWAYS:**
+11. After updating application status, check if follow-up log needs an entry
