@@ -140,7 +140,7 @@ const followupLog = parseFollowupLog();
 
 if (applications.length === 0) {
   if (JSON_OUTPUT) {
-    console.log(JSON.stringify({ date: today, urgent: [], dueSoon: [], onTrack: [], summary: { needFollowUp: 0, onTrack: 0, stale: 0 } }, null, 2));
+    console.log(JSON.stringify({ date: today, thresholds: THRESHOLDS, urgent: [], dueSoon: [], onTrack: [], summary: { needFollowUp: 0, onTrack: 0, stale: 0 } }, null, 2));
   } else {
     console.log('\nNo applications found. Nothing to check.\n');
   }
